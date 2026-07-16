@@ -15,6 +15,7 @@
       self.nixosModules.kanata
       self.nixosModules.nix
       self.nixosModules.nautilus
+      self.nixosModules.jujutsu
 
       inputs.dms.nixosModules.greeter
       inputs.dms.nixosModules.dank-material-shell
@@ -107,10 +108,7 @@
         enableBashIntegration = true;
       };
       firefox.enable = true;
-      git = {
-        enable = true;
-        config = "";
-      };
+      git.enable = true;
       dank-material-shell = {
         enableCalendarEvents = false; # BUG
         enable = true;
@@ -151,7 +149,7 @@
       bat
 
       yq
-      jujutsu
+
       btop
       fastfetch # TODO: fastfetch show on shell startup, check fastfetchMinimal
       outfieldr # tldr client
