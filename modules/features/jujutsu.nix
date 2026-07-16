@@ -8,7 +8,7 @@
       self',
       pkgs,
     }: {
-      environment.systemPackages = [self'.packages.jujutsu pkgs.commitlint-rs];
+      environment.systemPackages = [self'.packages.jujutsu pkgs.commitlint-rs pkgs.hunk];
     }
   );
   perSystem = {pkgs, ...}: {

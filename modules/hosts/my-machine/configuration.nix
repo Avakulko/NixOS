@@ -142,7 +142,6 @@
 
       sioyek # BUG: run as QT_QPA_PLATFORM=xcb sioyek. Mb configuring niri would help?
       (self.packages."${pkgs.stdenv.hostPlatform.system}".kitty)
-      # inputs.hunk.packages.${pkgs.stdenv.hostPlatform.system}.hunk
       # for programs.television
       fd
       ripgrep
