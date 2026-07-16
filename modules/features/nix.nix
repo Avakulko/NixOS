@@ -4,6 +4,9 @@
   ...
 }: {
   flake.nixosModules.nix = {pkgs, ...}: {
+    nixpkgs.config.permittedInsecurePackages = [
+      "electron-40.10.5"
+    ];
     imports = [inputs.nixos-cli.nixosModules.nixos-cli];
     programs.nixos-cli = {
       enable = true;
