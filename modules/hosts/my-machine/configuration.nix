@@ -17,6 +17,7 @@
       self.nixosModules.nautilus
       self.nixosModules.jujutsu
       self.nixosModules.kitty
+      self.nixosModules.neovim
 
       inputs.dms.nixosModules.greeter
       inputs.dms.nixosModules.dank-material-shell
@@ -99,11 +100,11 @@
     };
 
     programs = {
-      neovim = {
-        enable = true;
-        defaultEditor = true;
-        package = self.packages."${pkgs.stdenv.hostPlatform.system}".neovim;
-      };
+      # neovim = {
+      #   enable = true;
+      #   defaultEditor = true;
+      #   package = self.packages."${pkgs.stdenv.hostPlatform.system}".neovim;
+      # };
       television = {
         enable = true;
         enableBashIntegration = true;
