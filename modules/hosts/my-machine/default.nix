@@ -11,8 +11,4 @@
       self.nixosModules.myMachineConfiguration
     ];
   };
-  flake.nixosConfigurations.agent = inputs.nixpkgs.lib.nixosSystem {
-    modules = [self.nixosModules.myMachineConfiguration];
-    pkgs.stdenv.hostPlatform = inputs.nixpkgs.lib.mkDefault "x86_64-linux";
-  };
 }
