@@ -16,6 +16,7 @@
       self.nixosModules.nix
       self.nixosModules.nautilus
       self.nixosModules.jujutsu
+      self.nixosModules.kitty
 
       inputs.dms.nixosModules.greeter
       inputs.dms.nixosModules.dank-material-shell
@@ -141,7 +142,7 @@
       openshell
 
       sioyek # BUG: run as QT_QPA_PLATFORM=xcb sioyek. Mb configuring niri would help?
-      (self.packages."${pkgs.stdenv.hostPlatform.system}".kitty)
+
       # for programs.television
       fd
       ripgrep
@@ -161,10 +162,7 @@
       tela-circle-icon-theme
     ];
     fonts.packages = with pkgs; [
-      nerd-fonts.symbols-only
-      jetbrains-mono # See https://github.com/jetbrains/jetbrainsmono#opentype-features
       noto-fonts
-      iosevka
     ];
     hardware.bluetooth.enable = true;
     services.xserver.videoDrivers = ["nvidia"];

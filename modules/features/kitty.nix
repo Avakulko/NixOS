@@ -1,7 +1,22 @@
 {
-  flake.wrappers.kitty = {wlib, ...}: {
-    imports = [wlib.wrapperModules.kitty];
-    config = {
+  inputs,
+  moduleWithSystem,
+  ...
+}: {
+  flake.nixosModules.kitty = moduleWithSystem ({
+    self',
+    pkgs,
+    ...
+  }: {
+    environment.systemPackages = [self'.packages.kitty];
+    fonts.packages = with pkgs; [
+      nerd-fonts.symbols-only
+      jetbrains-mono # TODO: See https://github.com/jetbrains/jetbrainsmono#opentype-features
+    ];
+  });
+  perSystem = {pkgs, ...}: {
+    packages.kitty = inputs.wrapper-modules.wrappers.kitty.wrap {
+      inherit pkgs;
       # map ctrl+c copy_or_interrupt
       font = {
         name = "JetBrains Mono";
