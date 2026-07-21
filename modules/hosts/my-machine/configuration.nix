@@ -89,6 +89,7 @@
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.andrew = {
       isNormalUser = true;
+      initialPassword = "12345";
       extraGroups = [
         "wheel" # Enable ‘sudo’ for the user
         "networkmanager"
