@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.myMachineConfiguration = {
+  flake.nixosModules.configuration = {
     config,
     lib,
     pkgs,
@@ -27,18 +27,22 @@
       self.nixosModules.firefox
       self.nixosModules.steam
 
+      self.nixosModules.preservation
     ];
-    # Allow unfree packages
+
+    networking.hostName = "Hamlet";
+
     nixpkgs.config.allowUnfree = true;
+
     # Use the systemd-boot EFI boot loader.
-    boot.loader.systemd-boot.enable = true;
     boot.loader.timeout = 0;
+    boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+    # boot.tmp.cleanOnBoot = true;
 
     # Use latest kernel.
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    networking.hostName = "myMachine"; # Define your hostname.
     # Set your time zone.
     time.timeZone = "Asia/Yekaterinburg";
 
@@ -96,30 +100,30 @@
       starship.enable = true;
     };
     environment.systemPackages = with pkgs; [
-      flameshot
-      comma
+      # flameshot
+      # comma
 
       # LLM
-      pi-coding-agent
-      herdr
-      openshell
+      # pi-coding-agent
+      # herdr
+      # openshell
 
-      sioyek # BUG: run as QT_QPA_PLATFORM=xcb sioyek. Mb configuring niri would help?
+      # sioyek # BUG: run as QT_QPA_PLATFORM=xcb sioyek. Mb configuring niri would help?
 
-      yq
+      # yq
 
       btop
       fastfetch # TODO: fastfetch show on shell startup, check fastfetchMinimal
       outfieldr # tldr client
-      wget
+      # wget
       stow
-      zellij
-      vesktop
+      # zellij
+      # vesktop
     ];
-    fonts.packages = with pkgs; [
-      noto-fonts
-    ];
-    hardware.bluetooth.enable = true;
+    # fonts.packages = with pkgs; [
+    # noto-fonts
+    # ];
+    # hardware.bluetooth.enable = true;
 
     zramSwap = {
       enable = true;

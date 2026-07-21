@@ -7,6 +7,13 @@
 
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
+    preservation.url = "github:nix-community/preservation";
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
