@@ -18,6 +18,7 @@
       self.nixosModules.jujutsu
       self.nixosModules.kitty
       self.nixosModules.neovim
+      self.nixosModules.virt
 
       inputs.dms.nixosModules.greeter
       inputs.dms.nixosModules.dank-material-shell
@@ -185,10 +186,7 @@
 
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
-    virtualisation.podman = {
-      enable = true;
-      dockerSocket.enable = true;
-    };
+
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # programs.mtr.enable = true;
