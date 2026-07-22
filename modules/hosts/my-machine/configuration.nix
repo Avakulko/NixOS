@@ -135,6 +135,7 @@
       };
     };
     environment.systemPackages = with pkgs; [
+      flameshot
       comma
 
       # LLM
