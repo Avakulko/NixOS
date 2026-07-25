@@ -25,6 +25,7 @@
       self.nixosModules.dms
       self.nixosModules.video
       self.nixosModules.firefox
+      self.nixosModules.steam
 
     ];
     # Allow unfree packages
@@ -93,12 +94,6 @@
     programs = {
       yazi.enable = true;
       starship.enable = true;
-      steam = {
-        enable = true;
-        extraCompatPackages = with pkgs; [
-          proton-ge-bin
-        ];
-      };
     };
     environment.systemPackages = with pkgs; [
       flameshot
