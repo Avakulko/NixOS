@@ -75,21 +75,11 @@
       };
     };
 
-    # Enable CUPS to print documents.
-    # services.printing.enable = true;
-
-    # Enable sound.
-    # services.pulseaudio.enable = true;
-    # OR
     services.pipewire = {
       enable = true;
       pulse.enable = true;
     };
 
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.libinput.enable = true;
-
-    # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.andrew = {
       isNormalUser = true;
       initialPassword = "12345";
@@ -97,17 +87,9 @@
         "wheel" # Enable ‘sudo’ for the user
         "networkmanager"
       ];
-      # packages = with pkgs; [
-      #   tree
-      # ];
     };
 
     programs = {
-      # neovim = {
-      #   enable = true;
-      #   defaultEditor = true;
-      #   package = self.packages."${pkgs.stdenv.hostPlatform.system}".neovim;
-      # };
       firefox.enable = true;
       git.enable = true;
       dank-material-shell = {
