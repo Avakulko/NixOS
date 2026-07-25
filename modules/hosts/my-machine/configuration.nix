@@ -21,6 +21,7 @@
       self.nixosModules.virt
 
       self.nixosModules.television
+      self.nixosModules.telegram
 
       inputs.dms.nixosModules.greeter
       inputs.dms.nixosModules.dank-material-shell
@@ -152,7 +153,6 @@
       stow
       zellij
       xwayland-satellite # for niri
-      telegram-desktop
       vesktop
       tela-circle-icon-theme
     ];
