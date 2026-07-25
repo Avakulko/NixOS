@@ -20,6 +20,8 @@
       self.nixosModules.neovim
       self.nixosModules.virt
 
+      self.nixosModules.television
+
       inputs.dms.nixosModules.greeter
       inputs.dms.nixosModules.dank-material-shell
     ];
@@ -105,10 +107,6 @@
       #   defaultEditor = true;
       #   package = self.packages."${pkgs.stdenv.hostPlatform.system}".neovim;
       # };
-      television = {
-        enable = true;
-        enableBashIntegration = true;
-      };
       firefox.enable = true;
       git.enable = true;
       dank-material-shell = {
@@ -144,11 +142,6 @@
       openshell
 
       sioyek # BUG: run as QT_QPA_PLATFORM=xcb sioyek. Mb configuring niri would help?
-
-      # for programs.television
-      fd
-      ripgrep
-      bat
 
       yq
 
