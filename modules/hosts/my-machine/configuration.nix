@@ -22,9 +22,8 @@
 
       self.nixosModules.television
       self.nixosModules.telegram
+      self.nixosModules.dms
 
-      inputs.dms.nixosModules.greeter
-      inputs.dms.nixosModules.dank-material-shell
     ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -92,20 +91,6 @@
     programs = {
       firefox.enable = true;
       git.enable = true;
-      dank-material-shell = {
-        enableCalendarEvents = false; # BUG
-        enable = true;
-        systemd = {
-          enable = true;
-          restartIfChanged = true;
-        };
-        greeter = {
-          compositor = {
-            name = "niri";
-          };
-          enable = true;
-        };
-      };
       yazi.enable = true;
       starship.enable = true;
       steam = {
