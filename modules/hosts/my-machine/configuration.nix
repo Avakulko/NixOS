@@ -91,7 +91,6 @@
     };
 
     programs = {
-      git.enable = true;
       yazi.enable = true;
       starship.enable = true;
       steam = {

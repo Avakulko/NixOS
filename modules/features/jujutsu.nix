@@ -8,6 +8,7 @@
       self',
       pkgs,
     }: {
+      programs.git.enable = true;
       environment.systemPackages = [self'.packages.jujutsu pkgs.commitlint-rs pkgs.hunk];
     }
   );
