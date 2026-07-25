@@ -12,6 +12,10 @@
       enable = true;
       # package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
     };
+    environment.systemPackages = with pkgs; [
+      xwayland-satellite
+      tela-circle-icon-theme
+    ];
   };
   # perSystem =
   # {

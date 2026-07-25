@@ -23,7 +23,6 @@
       self.nixosModules.television
       self.nixosModules.telegram
       self.nixosModules.dms
-
     ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -119,9 +118,7 @@
       wget
       stow
       zellij
-      xwayland-satellite # for niri
       vesktop
-      tela-circle-icon-theme
     ];
     fonts.packages = with pkgs; [
       noto-fonts
