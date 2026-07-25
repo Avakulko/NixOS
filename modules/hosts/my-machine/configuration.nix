@@ -24,6 +24,8 @@
       self.nixosModules.telegram
       self.nixosModules.dms
       self.nixosModules.video
+      self.nixosModules.firefox
+
     ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -89,7 +91,6 @@
     };
 
     programs = {
-      firefox.enable = true;
       git.enable = true;
       yazi.enable = true;
       starship.enable = true;
