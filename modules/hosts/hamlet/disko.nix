@@ -63,6 +63,7 @@
             "/persist/swap" = {
               mountpoint = "/persist/swap";
               mountOptions = ["subvol=swap" "noatime" "nodatacow" "compress=no"];
+              # TODO: configure hibernation
               swap.swapfile.size = "18G";
             };
           };

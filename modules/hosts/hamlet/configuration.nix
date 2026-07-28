@@ -87,6 +87,7 @@
       pulse.enable = true;
     };
 
+    # TODO: mutableUsers, hashedPassword, userborn
     users.users.andrew = {
       isNormalUser = true;
       initialPassword = "12345";
