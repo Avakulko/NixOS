@@ -2,7 +2,6 @@
   flake.nixosModules.video = {config, ...}: {
     services.xserver.videoDrivers = ["nvidia"];
     hardware.graphics = {
-      # enable = true;
       enable32Bit = true; # Steam and 32-bit OpenGL/Vulkan apps
     };
 

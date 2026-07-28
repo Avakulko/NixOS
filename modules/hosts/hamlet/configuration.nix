@@ -101,29 +101,27 @@
       starship.enable = true;
     };
     environment.systemPackages = with pkgs; [
-      # flameshot
+      flameshot
       # comma
+      stow
 
       # LLM
-      # pi-coding-agent
+      pi-coding-agent
       # openshell
 
       # sioyek # BUG: run as QT_QPA_PLATFORM=xcb sioyek. Mb configuring niri would help?
 
-      # yq
+      yq
 
       btop
       fastfetch # TODO: fastfetch show on shell startup, check fastfetchMinimal
       outfieldr # tldr client
-      # wget
-      stow
-      # zellij
-      # vesktop
+      vesktop
     ];
     # fonts.packages = with pkgs; [
     # noto-fonts
     # ];
-    # hardware.bluetooth.enable = true;
+    hardware.bluetooth.enable = true;
 
     zramSwap = {
       enable = true;
