@@ -36,6 +36,10 @@
   }: {
     packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
+      extraSettings = [
+        # {include = ./some/pure/path;}
+        {include = [{optional = true;} "/home/andrew/.config/niri/config.kdl"];}
+      ];
       settings = {
         prefer-no-csd = _: {};
         # layout = {

@@ -1,11 +1,10 @@
 {inputs, ...}: {
   flake.nixosModules.dms = {pkgs, ...}: {
+    # TODO: update dms.json
+    # add kde connect plugin
     programs.dms-shell = {
       enable = true;
-      systemd = {
-        enable = true;
-        restartIfChanged = true;
-      };
+      enableVPN = false;
     };
     services.displayManager = {
       defaultSession = "niri"; # Required for autoLogin
@@ -18,8 +17,10 @@
         compositor.name = "niri";
       };
     };
-    environment.systemPackages = [
-      pkgs.tela-circle-icon-theme
+    environment.systemPackages = with pkgs; [
+      # tela-circle-icon-theme
+      fluent-icon-theme
+      bibata-cursors
     ];
   };
 }
