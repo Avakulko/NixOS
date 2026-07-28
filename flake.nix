@@ -17,11 +17,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     kanata-switcher = {
       url = "github:7mind/kanata-switcher";
       inputs.nixpkgs.follows = "nixpkgs";
