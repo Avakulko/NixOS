@@ -29,7 +29,6 @@
     };
     environment.systemPackages = with pkgs; [
       nix-output-monitor
-      nix-search-tv
       nix-inspect
     ];
     programs.nh = {
