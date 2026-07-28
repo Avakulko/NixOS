@@ -26,6 +26,7 @@
       self.nixosModules.video
       self.nixosModules.firefox
       self.nixosModules.steam
+      self.nixosModules.herdr
 
       self.nixosModules.preservation
     ];
@@ -105,7 +106,6 @@
 
       # LLM
       # pi-coding-agent
-      # herdr
       # openshell
 
       # sioyek # BUG: run as QT_QPA_PLATFORM=xcb sioyek. Mb configuring niri would help?
