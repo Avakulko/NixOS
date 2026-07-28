@@ -119,9 +119,9 @@
       outfieldr # tldr client
       vesktop
     ];
-    # fonts.packages = with pkgs; [
-    # noto-fonts
-    # ];
+    fonts.packages = with pkgs; [
+      noto-fonts
+    ];
     hardware.bluetooth.enable = true;
 
     zramSwap = {
