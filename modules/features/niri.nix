@@ -1,3 +1,4 @@
+# TODO: smart gaps
 {
   inputs,
   moduleWithSystem,
@@ -42,9 +43,6 @@
       ];
       settings = {
         prefer-no-csd = _: {};
-        # layout = {
-        # focus-ring = {};
-        # };
         binds = {
           "Mod+Return".spawn-sh = lib.getExe self'.packages.kitty;
           "Mod+F".maximize-column = _: {};
@@ -61,6 +59,10 @@
           "Mod+K".focus-workspace-up = _: {};
           "Mod+Shift+K".move-column-to-workspace-up = _: {};
 
+          "Mod+v".toggle-window-floating = _: {};
+          "Mod+Shift+Slash".show-hotkey-overlay = _: {};
+          "Mod+Shift+P".screenshot = _: {};
+          "Mod+Tab".toggle-overview = _: {};
           "Mod+Q".close-window = _: {};
         };
       };
