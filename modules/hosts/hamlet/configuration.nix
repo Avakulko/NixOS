@@ -114,7 +114,8 @@
 
       yq
 
-      btop
+      # btop
+      btop-cuda
       fastfetch # TODO: fastfetch show on shell startup, check fastfetchMinimal
       outfieldr # tldr client
       vesktop
