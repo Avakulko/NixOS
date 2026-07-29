@@ -6,11 +6,11 @@
     };
 
     hardware.nvidia = {
-      open = false;
+      open = true;
 
       modesetting.enable = true;
 
-      powerManagement.enable = false;
+      powerManagement.enable = true; # HACK: fixes nvidia suspend/resume
       powerManagement.finegrained = false;
 
       nvidiaSettings = false;
