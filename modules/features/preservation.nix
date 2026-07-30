@@ -1,6 +1,7 @@
 {inputs, ...}: {
   flake.nixosModules.preservation = {
     imports = [inputs.preservation.nixosModules.default];
+
     preservation = {
       enable = true;
       preserveAt."/persist" = {
@@ -11,18 +12,18 @@
           }
         ];
         directories = [
-          "/var/lib/systemd/timers"
-          "/var/lib/nixos"
-          "/var/lib/bluetooth"
           "/etc/NetworkManager/system-connections"
-          "/var/log"
-          # "/tmp"
         ];
-        users.andrew = {
-          files = [];
-          directories = [];
-        };
+        # users.andrew = {
+        #   files = [];
+        #   directories = [];
+        # };
       };
     };
+    # HACK: https://github.com/nix-community/preservation/pull/23
+    boot.initrd.systemd.tmpfiles.settings.preservation."/sysroot/persist/etc/machine-id".f = {
+      argument = "uninitialized";
+    };
+    systemd.services.systemd-machine-id-commit.unitConfig.ConditionFirstBoot = true;
   };
 }
