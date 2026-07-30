@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   flake.nixosModules.networking = {pkgs, ...}: {
     # Configure network connections interactively with nmcli or nmtui.
     networking.networkmanager.enable = true;
@@ -22,8 +22,8 @@
 
     environment.systemPackages = with pkgs; [
       wireshark
-      sing-box
       # gui-for-singbox
+      inputs.openflakes.packages.x86_64-linux.sing-box-pre
     ];
     programs.wireshark.enable = true;
     users.users.andrew.extraGroups = ["wireshark"];

@@ -23,6 +23,8 @@
     };
 
     nixos-cli.url = "github:nix-community/nixos-cli";
+
+    openflakes.url = "github:aur3l14no/openflakes";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
