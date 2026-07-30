@@ -87,6 +87,10 @@
       pulse.enable = true;
     };
 
+    security.sudo.extraConfig = ''
+      Defaults lecture=never
+    '';
+
     # TODO: mutableUsers, hashedPassword, userborn
     users.users.andrew = {
       isNormalUser = true;
