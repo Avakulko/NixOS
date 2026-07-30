@@ -25,6 +25,7 @@
     nixos-cli.url = "github:nix-community/nixos-cli";
 
     openflakes.url = "github:aur3l14no/openflakes";
+    nixpkgs-throne.url = "github:NixOS/nixpkgs/pull/529124/head";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);

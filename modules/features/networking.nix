@@ -1,5 +1,9 @@
 {inputs, ...}: {
-  flake.nixosModules.networking = {pkgs, ...}: {
+  flake.nixosModules.networking = {pkgs, ...}: let
+    pkgsThrone = import inputs.nixpkgs-throne {
+      inherit (pkgs.stdenv.hostPlatform) system;
+    };
+  in {
     # Configure network connections interactively with nmcli or nmtui.
     networking.networkmanager.enable = true;
 
@@ -18,6 +22,7 @@
         enable = true;
         setuid = true;
       };
+      package = pkgsThrone.throne;
     };
 
     environment.systemPackages = with pkgs; [
