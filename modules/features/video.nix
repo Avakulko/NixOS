@@ -15,7 +15,7 @@
 
       nvidiaSettings = false;
 
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      branch = "bleeding_edge";
     };
   };
 }
