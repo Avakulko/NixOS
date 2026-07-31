@@ -35,5 +35,6 @@
       enable = true;
       flake = "/home/andrew/myNixOS"; # "$HOME/myNixOS/" doesnt work for some reason
     };
+    programs.nix-ld.enable = true;
   };
 }
