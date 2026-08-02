@@ -18,6 +18,7 @@
     networking.firewall.enable = false;
 
     programs.tcpdump.enable = true;
+    programs.sniffnet.enable = true;
 
     programs.amnezia-vpn.enable = true;
     programs.throne = {
