@@ -32,6 +32,7 @@
       ];
       settings = {
         prefer-no-csd = _: {};
+        input = {focus-follows-mouse = _: {props = {max-scroll-amount = "0%";};};};
         binds = {
           "Mod+Return".spawn-sh = lib.getExe self'.packages.kitty;
           "Mod+F".maximize-column = _: {};
